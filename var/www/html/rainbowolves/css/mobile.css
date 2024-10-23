@@ -1,0 +1,76 @@
+
+/* This is a style document for screens smaller then 700px */
+
+@media screen and (max-width: 1100px) {
+	
+	header{
+		
+		height: 350px;
+		
+	}
+	
+	footer{
+	
+		padding: 10px 0px 7px;
+	
+	}
+
+	#images_section{
+		
+		display: none;
+		
+	}
+	
+	h1{
+		
+		font-size: 50px;
+		
+	}
+	
+	.card{
+		
+		padding: 15px 50px 20px;
+		
+	}
+	
+	#transparent_cover{
+	
+		height: 100%;
+	
+
+		
+		margin-top: -30px;
+	
+	}
+	
+	#welcome_text{
+		
+		padding: 200px 0px 0px;
+		
+	}
+	
+	#img_logo{
+		
+		margin-top: 0;
+		
+		margin-left: 45%;
+		
+		border-radius: 100%;
+		
+	}
+	
+	#logo{
+		
+		
+		
+		padding-top: 40px;
+		
+		width: 100%;
+		
+		position: fixed;
+		
+		
+		
+	}
+	
+}

@@ -1,5 +1,9 @@
 #!/bin/bash
 
-echo "CONTAINER SUCCSESSFULY STARTED"
+echo "eula=$EULA" >> /rainbowolves/server/eula.txt
 
-# RUN nginx service and minecraft server
+#systemctl start nginx
+
+cd /rainbowolves/server && java -Xmx3072M -Xms1024M -jar paper.jar
+
+# 1) run nginx if not runned, check TLSserts and renew via certbot if expired
