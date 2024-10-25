@@ -2,8 +2,13 @@
 
 echo "eula=$EULA" >> /rainbowolves/server/eula.txt
 
-#systemctl start nginx
+service nginx start
 
-cd /rainbowolves/server && java -Xmx3072M -Xms1024M -jar paper.jar
+certbot --nginx
 
-# 1) run nginx if not runned, check TLSserts and renew via certbot if expired
+service nginx reload
+
+cd /rainbowolves/server
+
+java -Xmx3072M -Xms1024M -jar paper.jar
+

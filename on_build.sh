@@ -1,23 +1,27 @@
 #!/bin/bash
 
-chmod +x /rainbowolves/on_start.sh
+chmod +x $MAINDIR/on_start.sh
 
-apt -y update && apt install -y nginx wget 
+apt -y update && apt install -y nginx wget
 
-wget $JDK -O /rainbowolves/jdk.deb 
+wget $JDK -O $MAINDIR/jdk.deb 
+wget $PAPERMC -O $SERVERDIR/paper.jar
+wget $GEYSER -O $PLUGINSDIR/geyser.jar
+wget $FLOODGATE -O $PLUGINSDIR/floodgate.jar
+wget $DYNMAP -O $PLUGINSDIR/dynmap.jar
+wget $WORLDEDIT -O $PLUGINSDIR/worldedit.jar
+wget $EBACKUP -O $PLUGINSDIR/ebackup.jar
 
-wget $PAPERMC -O /rainbowolves/server/paper.jar
+apt install $MAINDIR/jdk.deb
 
-wget $GEYSER -O /rainbowolves/server/plugins/geyser.jar
+#Add Certbot PPA
+apt-get install software-properties-common && add-apt-repository universe add-apt-repository ppa:certbot/certbot && sudo apt-get update
+#Install Certbot
+apt-get -y install certbot python3-certbot-nginx
 
-wget $FLOODGATE -O /rainbowolves/server/plugins/floodgate.jar
+#make symlinks for nginxS
+ln -s /etc/nginx/sites-available/rainbowolves.net.conf /etc/nginx/sites-enabled/rainbowolves.net.conf
+ln -s /etc/nginx/sites-available/map.rainbowolves.net.conf /etc/nginx/sites-enabled/map.rainbowolves.net.conf 
 
-wget $DYNMAP -O /rainbowolves/server/plugins/dynmap.jar
-
-wget $WORLDEDIT -O /rainbowolves/server/plugins/worldedit.jar
-
-wget $EBACKUP -O /rainbowolves/server/plugins/ebackup.jar
-
-apt install /rainbowolves/jdk.deb
-
-# INSTALL  certbot
+#crontime certbot renewal
+echo "0 0,12 * * * root /opt/certbot/bin/python -c 'import random; import time; time.sleep(random.random() * 3600)' && sudo certbot renew -q" | tee -a /etc/crontab > /dev/null
