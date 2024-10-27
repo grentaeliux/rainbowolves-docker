@@ -23,5 +23,5 @@ apt-get -y install certbot python3-certbot-nginx
 ln -s /etc/nginx/sites-available/rainbowolves.net.conf /etc/nginx/sites-enabled/rainbowolves.net.conf
 ln -s /etc/nginx/sites-available/map.rainbowolves.net.conf /etc/nginx/sites-enabled/map.rainbowolves.net.conf 
 
-#crontime certbot renewal
+#crontab certbot renewal
 echo "0 0,12 * * * root /opt/certbot/bin/python -c 'import random; import time; time.sleep(random.random() * 3600)' && certbot renew -q" | tee -a /etc/crontab > /dev/null

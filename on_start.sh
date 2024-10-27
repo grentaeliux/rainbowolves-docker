@@ -2,13 +2,13 @@
 
 echo "eula=$EULA" >> /rainbowolves/server/eula.txt
 
-service nginx start
+/usr/sbin/nginx
 
-#certbot --nginx
-
-#service nginx reload
+if [ "$CERTBOT" = "TRUE" ]
+then certbot --nginx -d rainbowolves.net -d map.rainbowolves.net
+else echo "certbot is off"
+fi
 
 cd /rainbowolves/server
 
 java -Xmx3072M -Xms1024M -jar paper.jar
-
