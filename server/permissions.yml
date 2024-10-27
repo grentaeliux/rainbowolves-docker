@@ -1,0 +1,5 @@
+server.basics:
+       description: eBackup permissions.
+       default: true
+       children:
+          ebackup.admin: true

@@ -4,6 +4,7 @@ EXPOSE 25565/tcp
 EXPOSE 19132/udp
 EXPOSE 443/tcp
 EXPOSE 80/tcp
+EXPOSE 81/tcp
 
 ENV EULA=""
 
@@ -27,6 +28,6 @@ COPY server ${SERVERDIR}
 COPY etc /etc
 COPY var /var
 
-RUN chmod +x on_build.sh && on_build.sh
+RUN chmod +x ${MAINDIR}/on_build.sh && ${MAINDIR}/on_build.sh
 
-ENTRYPOINT [ "on_start.sh" ]
+ENTRYPOINT ["/rainbowolves/on_start.sh"]

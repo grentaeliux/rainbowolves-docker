@@ -4,9 +4,9 @@ echo "eula=$EULA" >> /rainbowolves/server/eula.txt
 
 service nginx start
 
-certbot --nginx
+#certbot --nginx
 
-service nginx reload
+#service nginx reload
 
 cd /rainbowolves/server
 

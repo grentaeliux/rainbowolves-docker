@@ -19,9 +19,9 @@ apt-get install software-properties-common && add-apt-repository universe add-ap
 #Install Certbot
 apt-get -y install certbot python3-certbot-nginx
 
-#make symlinks for nginxS
+#make symlinks for nginxs
 ln -s /etc/nginx/sites-available/rainbowolves.net.conf /etc/nginx/sites-enabled/rainbowolves.net.conf
 ln -s /etc/nginx/sites-available/map.rainbowolves.net.conf /etc/nginx/sites-enabled/map.rainbowolves.net.conf 
 
 #crontime certbot renewal
-echo "0 0,12 * * * root /opt/certbot/bin/python -c 'import random; import time; time.sleep(random.random() * 3600)' && sudo certbot renew -q" | tee -a /etc/crontab > /dev/null
+echo "0 0,12 * * * root /opt/certbot/bin/python -c 'import random; import time; time.sleep(random.random() * 3600)' && certbot renew -q" | tee -a /etc/crontab > /dev/null

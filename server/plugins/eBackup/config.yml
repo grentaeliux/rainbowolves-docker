@@ -1,4 +1,4 @@
-crontask: '0 0 22 * * *' # This would make it every day at 4 AM
+crontask: '0 0 19 * * *' # This would make it every day at 7 PM
 
 # CronTask format:
 # * * * * * *
@@ -30,13 +30,13 @@ backup-path: 'plugins/eBackup/backups'
 
 # The maximum backups stored. Will delete older backups when reached. (≤ 0 to disable)
 # Note: this will only work with local backups (fallbacks included).
-max-backups: 3
+max-backups: 2
 
 # This option reduces disk space by only performing backups if players had joined since the last backup or server start.
 only-backup-if-players-were-on: true
 
 # Delete the local backup after each upload.
-delete-after-upload: false
+delete-after-upload: true
 
 # Zip compression level (0-9)
 # Increase it to reduce file size, but backups will be more CPU intensive and take longer
@@ -46,7 +46,7 @@ compression-level: 9
 # Backups saved here will not be auto-deleted.
 ftp:
     enable: true
-    path: '/rainbowolves_backups' # don't forget to change!
+    path: '/' # don't forget to change!
     type: sftp # ftp for ftp, sftp for ftp over ssh
     host: '109.248.170.147'
     port: 22
