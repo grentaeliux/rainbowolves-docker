@@ -1,0 +1,33 @@
+header.dark-mode {
+    background-color: #333; /* Dark mode color */
+}
+
+nav ul li a:hover, button:hover, a:hover {
+    background-color: #333; /* Light mode hover background */
+    color: #fff; /* Light mode hover text color */
+}
+
+header.dark-mode nav ul li a, header.dark-mode button, header.dark-mode a {
+    color: white; /* Dark mode text color */
+    text-decoration: none; /* Ensures no underline in dark mode */
+}
+
+header.dark-mode nav ul li a:hover, header.dark-mode button:hover, header.dark-mode a:hover {
+    background-color: #ffcc00; /* Dark mode hover background */
+    color: black; /* Dark mode hover text color */
+    text-decoration: none; /* Ensures no underline in dark mode */
+}
+
+footer.dark-mode {
+    background-color: #333; /* Dark mode color */
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+
+.card.dark-mode, .plugin-card.dark-mode {
+    background-color: #333;
+}

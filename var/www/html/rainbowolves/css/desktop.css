@@ -1,175 +1,144 @@
 
-/* This is a style document for screens larger then 700px */
+/* This is a style document for screens larger then 1100px */
 
 @media screen and (min-width: 1100px) {
-	
-	body{
-		
-		width: 70%;
-		
-		margin-left: 15%;
-		
-		background-attachment: fixed;
-		
-		background-image: url(../img/background-cover.png);
-		
-	}
-
-	header{
-		
-		height: 980px;
-		
-	}
-	
-	footer{
-	
-		padding: 20px 0px 7px;
-	
-	}
-	
-	h1{
-		
-		font-size:98px;
-		
-	}
-	
-	h2{
-		
-		font-size:40px;
-		
-	}
-	
-	h3{
-		
-		font-size: 40px;
-		
-		white-space: nowrap;
-		
-	}
-
-	
-	img{
-		
-		border-radius: 1%;
-		
-		max-height: 400px;
-		
-		margin: 50px 0px 50px;
-		
-		margin-left: 1%;
-
-	}
-	
-	.section{
-		
-		padding: 1px;
-		
-	}
-	
-	.card{
-		
+	body, html {
 		height: 100%;
-		
-		border-radius: 0px;
-		
-		display: inline-block;
-		
-		margin: 30px 5% 10px;
-		
-		padding: 15px 50px 20px;
-		
+		margin: 0;
+		padding: 0;
 	}
 	
-	#transparent_cover{
-		
-		height: 100%;
-		
-		padding: 1px;
-	
-	}
-	
-
-	#welcome_text{
-		
-		margin: 30% 0% 0%;
-		
-		
-	}
-	
-	#logo{
-		
-		margin: 10px;
-		
-		padding: 10px;
-		
-		width: 100px;
-		
-		height: 100px;
-		
-		position: fixed;
-
-		border-radius: 100%;
-		
-		background-color: rgba(61,131,213, 0.7);
-		
-	}
-	
-	#img_logo{
-		
-		margin-top: 15%;
-		
-		margin-left: 25%;
-		
-		border-radius: 100%;
-		
-		
-		
-	}
-	
-	#first_container{
-		
-		padding: 0px 15% 0px;
-		
-		margin: 0px 0px 50px;
-		
-		
-	}
-
-	#java_card{
-		
-		width: 40%;
-		
-		
-	}
-
-	#bedrock_card{
-		
-		width: 40%;
-		
-		
-	}
-	
-	#images_section{
-		
-		
+	body {
+		display: flex;
+		flex-direction: column;
+		font-family: Arial, sans-serif;
 		text-align: center;
-		
+		background-color: #fff; /* Light mode background color */
+		color: #000; /* Light mode text color */
 	}
 	
-	#footer_name{
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px;
+		background-color: #ffcc00; /* Light mode color */
+		height: 100px; /* Increased height */
+	}
+	.logo {
+		height: 50px;
+	}
 	
-		font-size: 14px;
+	nav ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		width: 100%;
+		justify-content: space-around;
+	}
 	
+	nav ul li {
+		display: inline;
+	}
 	
+	nav ul li a, button, a {
+		text-decoration: none; /* Ensures no underline */
+		color: black; /* Light mode text color */
+		padding: 15px 30px;
+		border: none;
+		background: none;
+		font-size: 18px;
+		transition: background-color 0.3s, color 0.3s;
+	}
+	main {
+		flex: 1;
+		padding: 20px;
+		margin-bottom: 20px; /* Adding space between main and footer */
+	}
+	
+	footer {
+		background-color: #ffcc00; /* Light mode color */
+		padding: 10px;
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+	}
+	/* Styles for About Card */
+	.about-card {
+		display: inline-block;
+		background-color: #ffcc00;
+		padding: 20px;
+		margin: 10px;
+		box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+		align-self: center; /* Centering cards vertically */
 	}
 
-	#footer_year{
-	
-		font-size: 12px;
-	
-	
+	/* Styles for Cards */
+	.card, .plugin-card {
+		display: inline-block;
+		background-color: #ffcc00;
+		width: 300px; /* Fixed width */
+		height: 200px; /* Fixed height */
+		padding: 20px;
+		margin: 10px;
+		box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+		align-self: center; /* Centering cards vertically */
 	}
-	
-	
-	
+
+	/* Specific styles for Technical Info page */
+	.plugin-card-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap; /* Allowing cards to wrap to the next line */
+	}
+
+	.carousel {
+		position: relative;
+		width: 80%;
+		margin: auto;
+	}
+
+	.carousel-img {
+		width: 100%;
+		height: 650px;
+		object-fit: cover;
+	}
+
+	.carousel-button {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: rgba(0, 0, 0, 0.5);
+		color: white;
+		border: none;
+		padding: 10px;
+		cursor: pointer;
+	}
+
+	.carousel-button.left {
+		left: 10px;
+	}
+
+	.carousel-button.right {
+		right: 10px;
+	}
+
+	#counter {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#days-counter {
+		font-size: 50px; /* Half of header height */
+		line-height: 50px;
+	}
+
+	#counter small {
+		font-size: 18px;
+	}
+
+			
 }
