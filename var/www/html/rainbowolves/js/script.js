@@ -6,11 +6,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const currentTheme = localStorage.getItem('theme') || 'light';
     if (currentTheme === 'dark') {
+
+        for (let index = 0; index < document.getElementsByClassName("themeMarker").length; index++) {
+            const element = document.getElementsByClassName("themeMarker")[index];
+            element.classList.add('dark-mode');
+        }
+
         document.body.classList.add('dark-mode');
     }
 });
 
 function toggleTheme() {
+
+  for (let index = 0; index < document.getElementsByClassName("themeMarker").length; index++) {
+    const element = document.getElementsByClassName("themeMarker")[index];
+    element.classList.toggle('dark-mode');
+  }
+
+
     document.body.classList.toggle('dark-mode');
     const currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
     localStorage.setItem('theme', currentTheme);
@@ -24,7 +37,8 @@ const images = [
     './img/picture_4-min.png',
     './img/picture_5-min.png',
     './img/picture_6-min.png',
-    './img/picture_7-min.png'
+    './img/picture_7-min.png',
+    './img/picture_8-min.png'
 ];
 const carouselImg = document.querySelector('.carousel-img');
 

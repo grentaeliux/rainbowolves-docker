@@ -11,7 +11,7 @@
     <script src="js/script.js" defer></script>
 </head>
 <body>
-    <header>
+    <header class="themeMarker">
         <img src="img/favicon.png" alt="RainboWolves Logo" class="logo">
         <nav>
             <ul>
@@ -20,27 +20,29 @@
                 <li><a href="tech-info.html">Technical Info</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="https://map.rainbowolves.net">Interactive Map</a></li>
+                <li><a href="https://discord.gg/R3WWYBQaSD">Discord</a></li>
             </ul>
         </nav>
         <div id="counter"><span id="days-counter"></span>days without wipe</div>
         <button onclick="toggleTheme()">Switch Theme</button>
     </header>
-<main>
-    <h1>Access Information</h1>
-    <div class="card">
-        <h2>Bedrock Edition</h2>
-        <p>Address: rainbowolves.net</p>
-        <p>Port: 19132</p>
-    </div>
-    <div class="card">
-        <h2>Java Edition</h2>
-        <p>Address: rainbowolves.net</p>
-        <p>Port: 25565</p>
-    </div>
-</main>
-
-
-    <footer>
+    <main>
+         <h1>Access Information</h1>
+        <div class="card themeMarker">
+            <img width="48" height="48" src="https://img.icons8.com/material-sharp/48/portraits.png" alt="portraits"/>
+            <h2>Bedrock Edition</h2>
+            <p style="white-space: nowrap;"><b style="user-select: none;">Address: </b>rainbowolves.net</p>
+			<p style="white-space: nowrap;"><b style="user-select: none;">Port: </b>19132</p>
+        </div>
+        <div class="card themeMarker">
+            <img width="48" height="48" src="https://img.icons8.com/forma-bold-filled/48/monitor.png" alt="monitor"/>
+            <h2>Java Edition</h2>
+            <p style="white-space: nowrap;"><b style="user-select: none;">Address: </b>rainbowolves.net</p>
+			<p style="white-space: nowrap;"><b style="user-select: none;">Port: </b>25565</p>
+        </div>
+    </main>
+    <iframe src="https://discord.com/widget?id=1298304643469807666&theme=dark" width="250" height="230" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    <footer class="themeMarker">
         &copy; 2024 RainboWolves
     </footer>
 </body>
